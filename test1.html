@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Brains Bank</title>
+    <link rel="stylesheet" href="home.css">
+    <script >    
+        // Function to handle button click
+        function handleGetStarted() {
+            alert('Welcome! You will be redirected to the login page.');
+            window.location.href = "login.html"; // Redirect to login page
+        }
+
+        // Function to handle navigation link clicks
+        function handleNavClick(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const page = event.target.getAttribute('href');
+            alert(`Navigating to ${page}`);
+            window.location.href = page; // Redirect to the selected page
+        }
+
+        // Attach event listeners when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', handleNavClick);
+            });
+
+            const getStartedButton = document.querySelector('.cta-button');
+            getStartedButton.addEventListener('click', handleGetStarted);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="account.html">|Account Opening|</a></li>
+                <li><a href="applyloan.html">|Loan Application|</a></li>
+                <li><a href="onlinepayment.html">|Online Banking|</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="main">
+        <div class="main-content">
+            <h2>Digital Identity Verification</h2>
+            <p>Fast, reliable, and convenient online banking services.</p>
+            <a href="login.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
+    
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <a href="account.html" class="service-item">
+                    <div>
+                        <img src="img/open.jpg" alt="Account Opening">
+                        <h3>Account Opening</h3>
+                        <p>Open your account online with ease.</p>
+                    </div>
+                </a>
+                <a href="loanapplication.html" class="service-item">
+                    <div>
+                        <img src="img/loan .jpg" alt="Loan Application">
+                        <h3>Loan Application</h3>
+                        <p>Apply for loans quickly and conveniently.</p>
+                    </div>
+                </a>
+                <a href="onlinepayment.html" class="service-item">
+                    <div>
+                        <img src="img/online banking .jpg" alt="Online Banking">
+                        <h3>Online Banking</h3>
+                        <p>Access your account without visiting a branch.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Binary Brains Bank. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
